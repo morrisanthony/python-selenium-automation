@@ -3,15 +3,11 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 
-@given('Open target page')
-def open_main(context):
-    context.driver.get('https://target.com/')
-
-
 @when('click on cart icon')
 def click_cart(context):
     context.driver.find_element(By.CSS_SELECTOR, "a[data-test='@web/CartLink']").click()
     sleep(5)
+
 
 
 @then('Verify Your cart is empty')

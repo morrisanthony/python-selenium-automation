@@ -2,9 +2,6 @@ from behave import given, when, then
 from selenium.webdriver.common.by import By
 from time import sleep
 
-@given('Open target homepage for logged-out user')
-def open_main(context):
-    context.driver.get('https://target.com/')
 
 @when('Click sign in')
 def click_sign_in(context):
