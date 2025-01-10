@@ -11,4 +11,6 @@ Feature: Tests Scenarios for Cart Functionality
    Scenario: User can add any Target’s product into the cart, and make sure it’s there
     Given    Open target main page
     When     Click on item and add to cart
+    And      Confirm add to cart button on side navigation bar
+    And      Open the cart page
     Then     Verify that the item is in the cart

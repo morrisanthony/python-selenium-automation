@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
 from time import sleep
 
@@ -9,8 +10,8 @@ def open_main(context):
 @when('search for tea')
 def search_product(context):
     context.driver.find_element(By.ID, "search").send_keys('tea')
-    context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
-    sleep(5)
+    context.driver.find_element(By.CSS_SELECTOR, "//a[data-test='@web/Search/SearchButton']").click()
+    context.driver.wait.until(EC. visibility_of_element_located((By.ID, "searchResults")))
 
 @then ('Verify search results shown')
 def verify_search_results(context):

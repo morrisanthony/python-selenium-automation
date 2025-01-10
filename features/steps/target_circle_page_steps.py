@@ -8,7 +8,8 @@ def open_circle_page(context):
 
 @when('Inspect page for the element that shows 10 benefit cells')
 def inspect_page(context):
-    context.driver.find_element(By.XPATH, "//div[@class='cell-item-content']")
+   context.driver.find_element(By.XPATH, "//div[@class='cell-item-content']")
+
 
 @then('Verify at least 10 benefit cells')
 def verify_cells(context):
