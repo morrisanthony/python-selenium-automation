@@ -1,12 +1,15 @@
 from behave import given, when, then
 from selenium.webdriver.common.by import By
 from time import sleep
+from selenium.webdriver.support import expected_conditions as EC
 
 
 @when('Click sign in')
 def click_sign_in(context):
-    context.driver.find_element(By.ID, "account-sign-in").click()
-    sleep(5)
+    #context.driver.find_element(By.ID, "account-sign-in").click()
+    sign_in_btn = (By.ID, "account-sign-in")
+    context.driver.wait.until(EC.element_to_be_clickable(sign_in_btn)).click()
+    #sleep(5)
 
 @given('From right side navigation menu, click Sign In')
 def click_sign_in_from_menu(context):
