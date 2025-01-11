@@ -4,6 +4,13 @@ from behave import given, when, then
 from time import sleep
 
 
+@when('Search for {product}')
+def search_for_product(context,product):
+    context.driver.find_element(By.ID, "search").send_keys(product)
+    context.driver.find_element(By.CSS_SELECTOR, '[data-test="@web/Search/SearchButton"]').click()
+    sleep(10)
+
+
 @when('Click on item and add to cart')
 def click_on_item_and_add_to_cart(context):
     ADD_CART_BUTTON = (By.CSS_SELECTOR, '[id*="addToCartButtonOrTextId"]')
@@ -43,5 +50,6 @@ def verify_item_added_to_cart(context):
     expected_cart_text = '1 item'
     assert expected_cart_text in actual_cart_text, f'Expected {expected_cart_text} to not be in {actual_cart_text}'
     print('Test case passed')
+
 
 
