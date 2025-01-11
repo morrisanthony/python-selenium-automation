@@ -5,9 +5,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @when('click on cart icon')
 def click_cart(context):
+    context.app.header.click_cart()
     #context.driver.find_element(By.CSS_SELECTOR, "a[data-test='@web/CartLink']").click()
-    cart_btn = (By.CSS_SELECTOR, "a[data-test='@web/CartLink']")
-    context.driver.wait.until(EC.element_to_be_clickable(cart_btn)).click()
+    #cart_btn = (By.CSS_SELECTOR, "a[data-test='@web/CartLink']")
+    #context.driver.wait.until(EC.element_to_be_clickable(cart_btn)).click()
     #sleep(5)
 
 
